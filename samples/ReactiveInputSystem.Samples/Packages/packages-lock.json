@@ -5,7 +5,8 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.unity.inputsystem": "1.0.0"
+        "com.unity.inputsystem": "1.0.0",
+        "com.cysharp.r3": "0.1.0"
       }
     },
     "com.cysharp.r3": {

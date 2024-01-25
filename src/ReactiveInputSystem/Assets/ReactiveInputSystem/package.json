@@ -1,12 +1,13 @@
 {
     "name": "com.annulusgames.reactive-input-system",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "displayName": "Reactive Input System",
     "description": "Reactive Extensions for Unity Input System",
     "unity": "2019.4",
     "license": "MIT",
     "dependencies": {
-        "com.unity.inputsystem": "1.0.0"
+        "com.unity.inputsystem": "1.0.0",
+        "com.cysharp.r3": "0.1.0"
     },
     "keywords": [
         "Rx",
