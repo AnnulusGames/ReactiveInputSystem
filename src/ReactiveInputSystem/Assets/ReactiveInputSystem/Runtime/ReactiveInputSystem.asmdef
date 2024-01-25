@@ -1,0 +1,19 @@
+{
+    "name": "ReactiveInputSystem",
+    "rootNamespace": "ReactiveInputSystem",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:77221876cc6b8244180b96e320b1bcd4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "R3.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
