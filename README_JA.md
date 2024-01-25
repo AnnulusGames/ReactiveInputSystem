@@ -3,31 +3,31 @@
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
 
-[日本語版READMEはこちら](README_JA.md)
+[English README is here.](README.md)
 
-## Overview
+## 概要
 
-ReactiveInputSystem is a library that provides functionality to convert events and device inputs from the Input System into Observables.
+ReactiveInputSystemはInput Systemのイベントやデバイス入力をObservableに変換する機能を提供するライブラリです。
 
-## Setup
+## セットアップ
 
-### Requirements
+### 要件
 
-* Unity 2021.3 or later (Unity 2022.2 or later recommended)
-* Input System 1.0.0 or later
-* R3 0.1.0 or later
+* Unity 2021.3 以上 (Unity 2022.2 以上を推奨)
+* Input System 1.0.0 以上
+* R3 0.1.0 以上
 
-### Installation
+### インストール
 
-1. Open Package Manager from Window > Package Manager.
-2. Click the "+" button > Add package from git URL.
-3. Enter the following URL:
+1. Window > Package ManagerからPackage Managerを開く
+2. 「+」ボタン > Add package from git URL
+3. 以下のURLを入力する
 
-```plaintext
+```
 https://github.com/AnnulusGames/ReactiveInputSystem.git?path=src/ReactiveInputSystem/Assets/ReactiveInputSystem
 ```
 
-Alternatively, open Packages/manifest.json and add the following to the dependencies block:
+あるいはPackages/manifest.jsonを開き、dependenciesブロックに以下を追記
 
 ```json
 {
@@ -37,9 +37,9 @@ Alternatively, open Packages/manifest.json and add the following to the dependen
 }
 ```
 
-## Extension Methods
+## 拡張メソッド
 
-By introducing ReactiveInputSystem, extension methods are added to convert events from `InputAction`, `PlayerInput`, `PlayerInputManager`, and others into Observables.
+ReactiveInputSystemを導入することで、`InputAction`や`PlayerInput`, `PlayerInputManager`などのイベントをObservableに変換する拡張メソッドが追加されます。
 
 ```cs
 using UnityEngine.InputSystem;
@@ -61,9 +61,9 @@ playerInput.OnActionTriggeredAsObservable(cancellationToken)
     .Subscribe(x => ...)
 ```
 
-## Device Input
+## デバイス入力
 
-You can obtain input from any device as an Observable using the `InputRx` class.
+`InputRx`クラスからあらゆるデバイスの入力をObservableとして取得することができます。
 
 ```cs
 InputRx.OnKeyDown(Key.Space)
@@ -76,7 +76,7 @@ InputRx.OnGamepadButtonDown(GamepadButton.North, cancellationToken)
     .Subscribe(_ => ...);
 ```
 
-Additionally, using the `OnAny**` methods allows you to retrieve information about the pressed button.
+また、`OnAny**`系のメソッドを使用することで、入力されたボタンの情報を取得できます。
 
 ```cs
 InputRx.OnAnyKeyDown()
@@ -89,9 +89,9 @@ InputRx.OnAnyGamepadButton()
     .Subscribe(gamepadButton => ...);
 ```
 
-## Other Events
+## その他のイベント
 
-`InputRx` provides methods to convert events from the `InputSystem` class and events from `InputUser` into Observables.
+`InputRx`では`InputSystem`クラスのイベントや`InputUser`のイベントをObservableに変換するメソッドも提供されています。
 
 ```cs
 // InputSystem.onAfterUpdate
@@ -109,9 +109,9 @@ InputRx.OnUserChange()
 
 ## InputControlPathEx
 
-As a utility for Control Path-related operations, the `InputControlPathEx` class is provided.
+Control Path関連のユーティリティとして`InputControlPathEx`クラスが用意されています。
 
-You can use `InputControlPathEx.GetControlPath()` to obtain a Control Path from enumerations such as `Key`, `MouseButton`, `GamepadButton`, etc. This can be useful when implementing interactive rebinding, for example, with `InputRx.OnAny**()`.
+`InputControlPathEx.GetControlPath()`を用いることで`Key`や`MouseButton`、`GamepadButton`などの列挙型からControl Pathを取得することができます。これは`InputRx.OnAny**()`と組み合わせてインタラクティブなリバインディングを実装する際などに便利です。
 
 ```cs
 InputAction inputAction;
@@ -129,6 +129,6 @@ async Task RebindAsync(CancellationToken cancellationToken)
 }
 ```
 
-## License
+## ライセンス
 
 [MIT License](LICENSE)
